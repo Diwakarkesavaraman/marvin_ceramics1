@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "816587797247",
+    "firebase_url": "https://fireauth-4f129.firebaseio.com",
+    "project_id": "fireauth-4f129",
+    "storage_bucket": "fireauth-4f129.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816587797247:android:6b7256023a7fa3f94952ca",
+        "android_client_info": {
+          "package_name": "com.example.loginfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816587797247-6v4vs3snusuvvjs4i1r9m8vot6plrbak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYZbcJ1p6TbE9ZwZWp5xmMRp1P5oFMkU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816587797247-6v4vs3snusuvvjs4i1r9m8vot6plrbak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
