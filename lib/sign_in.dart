@@ -4,6 +4,7 @@ import 'package:loginfirebase/services/auth.dart';
 import 'shared/constants.dart';
 import 'shared/loading.dart';
 import 'forgot_password.dart';
+import 'package:loginfirebase/pages/HomePage.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -94,7 +95,7 @@ class _SignInState extends State<SignIn> {
                           validator: (val) => val.length < 6
                               ? 'Enter a password 6+ chars long'
                               : null,
-                          obscureText: true,
+                          obscureText: _isHidden,
                           onChanged: (val) {
                             setState(() {
                               password = val;
@@ -203,6 +204,22 @@ class _SignInState extends State<SignIn> {
                       )
                     ],
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) => HomePage()));
+                    },
+                    child: Text(
+                      'Or else Skip',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),

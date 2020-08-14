@@ -21,6 +21,14 @@ class _RegisterState extends State<Register> {
   String password = '';
   String error = '';
 
+  bool _isHidden = true;
+  void _toggleVisibility() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return loading
@@ -70,19 +78,27 @@ class _RegisterState extends State<Register> {
                         SizedBox(
                           height: 20,
                         ),
-                        TextFormField(
-                          decoration: textInputDecoration.copyWith(
-                              hintText: 'Password'),
-                          validator: (val) => val.length < 6
-                              ? 'Enter a password 6+ chars long'
-                              : null,
-                          obscureText: true,
-                          onChanged: (val) {
-                            setState(() {
-                              password = val;
-                            });
-                          },
+                    TextFormField(
+                      decoration: textInputDecoration.copyWith(
+                        hintText: 'Password',
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: IconButton(
+                          onPressed: _toggleVisibility,
+                          icon: _isHidden
+                              ? Icon(Icons.visibility_off)
+                              : Icon(Icons.visibility),
                         ),
+                      ),
+                      validator: (val) => val.length < 6
+                          ? 'Enter a password 6+ chars long'
+                          : null,
+                      obscureText: _isHidden,
+                      onChanged: (val) {
+                        setState(() {
+                          password = val;
+                        });
+                      },
+                    ),
                         SizedBox(
                           height: 20,
                         ),

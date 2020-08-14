@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'pages/HomePage.dart';
 import 'authenticate.dart';
 import 'package:provider/provider.dart';
 import 'modal/user.dart';
@@ -12,7 +12,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return Authenticate();
     } else {
-      return HomeScreen();
+      return HomePage();
     }
   }
 }
